@@ -1,0 +1,31 @@
+produto=[]
+preco=[]
+while True:
+    n=input('Nome Produto [Digite Fim para finalizar]: ').strip()
+    if n.upper() == 'FIM':
+        break
+    if n in produto:
+        print('Produto repetido ! Tente novamente..')
+        continue
+    while True:
+        try:
+            p=float(input('Digite o preco [De 0.01 a 1000]: '))
+        except ValueError:
+            print('Erro ! digite apenas numeros..Tente novamente')
+            continue
+        if p < 0 or p > 1000:
+            print('Preco invalido !')
+            continue
+        break
+    produto.append(n)
+    preco.append(p)
+mais=max(preco)
+pos=preco.index(mais)
+menos=min(preco)
+pos_min=preco.index(menos)
+print(f'Produtos: {produto}')
+print(f'Preco: {preco}')
+print(f'O produto mais caro: {produto[pos]} - R$: {mais}')
+print(f'O produto mais barato: {produto[pos_min]} - R$:{menos}')
+print(f'Total dos precos: {sum(preco):.2f}')
+print(f'A media dos precos: {sum(preco)/len(preco)}')
