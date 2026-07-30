@@ -1,0 +1,24 @@
+aluno=[]
+nota=[]
+while True:
+        nome=input('Nome: ').strip()
+        if nome.upper()=='PARAR':
+              break
+        while True:
+            try:
+                      n=float(input('Nota de 0 a 10: '))
+            except ValueError:
+                    print('Erro! Digite um numero.')
+                    continue
+            if n > 10 or n <0:
+                      print('Nota invalida!')
+                      continue
+            break
+        aluno.append(nome)
+        nota.append(n)
+menor=min(nota)
+pos=nota.index(menor)
+print(f'Alunos: {aluno}')
+print(f'Notas: {nota}')
+print(f'A menor nota foi do aluno: {aluno[pos]} e a nota foi: {menor}')
+print(f'A media da turma: {sum(nota)/len(nota)}')
