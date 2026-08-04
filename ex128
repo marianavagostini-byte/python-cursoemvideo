@@ -12,4 +12,11 @@ while True:
 
 print('-=-=-=-=-= BOLETIM -=-=-=-=--')
 for c in lista:
+
     print(f'Aluno(a): {c[0]} - nota: {c[2]}')
+
+while True:
+    opc=int(input('Escolha um aluno(a): (999 para parar)'))
+    if opc ==999:
+        break
+    print(f'Nome: {lista[opc][0]} - notas: {lista[opc][1]}')
