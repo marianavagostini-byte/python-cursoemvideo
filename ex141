@@ -1,0 +1,14 @@
+from operator import itemgetter
+dicionario={}
+for c in range(1,4):
+    nome=input(f'Qual o nome do jogador [{c}] ? ')
+    dicionario[nome]=int(input(f'Quantos gols {nome} tem? '))
+print('-=-=-=-=-=-= JOGADORES CADASTRADOS -=-=-=-=--=-=')
+for k,v in dicionario.items():
+    print(f'{k} - {v}')
+
+ranking=sorted(dicionario.items(),key=itemgetter(1),reverse=True)
+print('-=-=-=-=-=-=- RANKING -=--=-=-=-=-=')
+for i, v in enumerate(ranking):
+    print(f'{i+1}º: {v[0]} - {v[1]} gols.')
+print(f'O artilheiro(a) e {ranking[0][0]}, com {ranking[0][1]} gols.')
