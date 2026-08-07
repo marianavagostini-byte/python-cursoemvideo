@@ -1,0 +1,17 @@
+from datetime import datetime
+dados={}
+dados['endereco']=input('Endereco: ')
+ano=int(input('Ano de construcao: '))
+dados['idade do imovel']=(datetime.now().year)-(ano)
+dados['Tipo']=input('Tipo - [Casa / Apartamento]: ')
+dados['aluguel']=int(input('Esta alugado? [1 sim / 0 Nao]: '))
+if dados['aluguel']==1:
+    dados['valor aluguel']=float(input('Valor do aluguel: '))
+    dados['contrato']=int(input('Ano de inicio do contrato: '))
+    dados['total recebido']=(datetime.now().year-dados['contrato'])*12*(dados['valor aluguel'])
+
+for k, v in dados.items():
+    if type (v) is float:
+        print(f' - {k} - R$ {v:.2f}')
+    else:
+        print(f' - {k} - {v}')
