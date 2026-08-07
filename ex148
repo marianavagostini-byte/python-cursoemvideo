@@ -1,0 +1,18 @@
+dados={}
+lista=[]
+
+dados['nome']=input('Nome do vendedor: ')
+
+tot=int(input(f'Quantos meses {dados["nome"]} trabalhou? '))
+
+for c in range(0,tot):
+    lista.append(int(input(f'Quantos vendeu no mês {c+1}? ')))
+dados['vendas']=lista[:]
+dados['total']=sum(lista)
+dados['média'] = dados['total'] / len(dados['vendas']) 
+
+print(f'{dados["nome"]} trabalhou por {len(dados["vendas"])} meses.')
+for i,v in enumerate(dados['vendas']):
+    print(f'  => No mes {i+1} - vendeu R$ {v:.2f}')
+print(f'o total vendido foi R$ {dados["total"]}')
+print(f'A media mensal foi R$ {dados["média"]}')
