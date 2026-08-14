@@ -1,0 +1,38 @@
+equipe=list()
+def total(*n):
+    return sum(n)
+def cadastra(lista):
+    while True:
+        dados={}
+        vendas=[]
+        dados['nome']=input('Nome: ')
+        for c in range(1,4):
+            vendas.append(float(input(f'vendas do mes {c}: ')))
+        dados['vendas']=vendas[:]
+        dados['total']=total(*vendas)
+        lista.append(dados)
+        resp=input('Deseja continuar? [S/N]')
+        if resp.upper()=='N':
+            break
+print()
+def relatorio(lista):
+    print('-=' * 20)
+    print('RELATORIO DA EQUIPE')
+    for p in lista:
+        print(f'{p['nome']}....... {p['vendas']} | total R$  {p['total']}')
+print()
+
+def destaque(lista):
+    campeao=lista[0]
+    for p in lista:
+        if p['total'] > campeao['total']:
+            campeao=p
+    return campeao['nome']
+
+cadastra(equipe)
+relatorio(equipe)
+print(f'Destaque do trimestre: {destaque(equipe)}')
+totais=[]
+for p in equipe:
+    totais.append(p['total'])
+print(f'Faturamento da equipe: R$ {total(*totais):.2f}')   
