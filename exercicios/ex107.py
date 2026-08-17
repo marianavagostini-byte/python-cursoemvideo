@@ -1,0 +1,13 @@
+# ex107
+# Fonte: Curso em Vídeo / prática (seu código)
+
+numeros=[]
+for c in range(1,5):
+    while True:
+        try:
+            n=int(input(f'Digite o {c} numero: '))
+            numeros.append(n)
+            break
+        except ValueError:
+            print('ERRO!! Digite apenas numeros.')
+print(f'A soma dos numeros e: {sum(numeros)}')

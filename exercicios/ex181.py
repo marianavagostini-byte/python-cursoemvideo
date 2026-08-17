@@ -1,0 +1,17 @@
+# ex181
+# Fonte: Curso em Vídeo / prática (seu código)
+
+def ficha(jog='<desconhecido>', gol=0):
+    print(f'O jogador {jog} fez {gol} gol(s) no campeonato.')
+
+
+n = input('Nome do Jogador: ')
+g = input('Número de Gols: ')
+
+if not g.isnumeric():
+    g = 0
+
+if n.strip() == '':
+    n = '<desconhecido>'
+
+ficha(n, g) 

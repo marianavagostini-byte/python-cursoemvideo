@@ -1,0 +1,19 @@
+# ex100
+# Fonte: Curso em Vídeo / prática (seu código)
+
+numeros=[]
+while True:
+    numeros.append(int(input('Digite um valor: ')))
+    resp=input('Deseja continuar [S/N] ? ').upper()
+    if resp == 'N':
+        break
+pares=[]
+impares=[]
+for valor in numeros:
+    if valor %2==0:
+        pares.append(valor)
+    else:
+        impares.append(valor)
+print(f'Os numeros digitados foram: {numeros}')
+print(f'Os numeros pares foram: {pares}')
+print(f'Os numeros impares foram: {impares}')

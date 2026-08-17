@@ -1,0 +1,16 @@
+# ex134
+# Fonte: Curso em Vídeo / prática (seu código)
+
+pessoa = {'nome': 'Gláucia', 'idade': 26, 'cidade': 'Goiânia'}
+
+print('--- só as chaves ---')
+for k in pessoa.keys():
+    print(k)
+
+print('\n--- só os valores ---')
+for v in pessoa.values():
+    print(v)
+
+print('\n--- os dois juntos ---')
+for k, v in pessoa.items():
+    print(f'A chave "{k}" guarda o valor "{v}"')

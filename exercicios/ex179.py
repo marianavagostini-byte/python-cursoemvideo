@@ -1,0 +1,17 @@
+# ex179
+# Fonte: Curso em Vídeo / prática (seu código)
+
+from datetime import date
+
+
+def voto(nasc):
+   idade= date.today().year - nasc
+   if idade <16:
+      return 'negado'
+   if idade <18 or idade >=65:
+      return 'opcional'
+   return 'obrigatorio'
+
+nascimento=int(input('Ano de nascimento: '))
+idade=date.today().year - nascimento
+print(f'Com {idade} anos : VOTO {voto(nascimento)}')

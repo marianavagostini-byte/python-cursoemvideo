@@ -1,0 +1,21 @@
+# ex142
+# Fonte: Curso em Vídeo / prática (seu código)
+
+from operator import itemgetter
+dicionario={}
+
+for c in range(1,5):
+    livro=input(f'Qual o nome do livro [{c}] ? ')
+    dicionario[livro]=int(input(f'O livro {livro} tem quantas paginas? '))
+
+print('-=-=-= LIVROS -=-=-=')
+
+ranking = sorted(dicionario.items(), key=itemgetter(1), reverse=True)
+for k,v in dicionario.items():
+    print(f'    {k} - {v} paginas.')
+
+print('-=-=-=- RANKING -=-=-=-')
+
+print(f'O livro mais curto é {ranking[-1][0]}, com {ranking[-1][1]} paginas.')
+print(f'E o mais longo e: {ranking[0][0]}, com {ranking[0][1]} paginas.')
+print(f'O acervo tem {sum(dicionario.values())} paginas no total.')

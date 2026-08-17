@@ -1,0 +1,16 @@
+# ex126
+# Fonte: Curso em Vídeo / prática (seu código)
+
+from random import randint
+premios=int(input('Quantos premios vao ser sorteados? '))
+tudo=[]
+for c in range(premios):
+    sorteio=[]
+    while len(sorteio) < 3:
+        num=randint(1,50)
+        if num not in sorteio:
+            sorteio.append(num)
+    sorteio.sort()
+    tudo.append(sorteio[:])
+for c in range (len(tudo)):
+    print(f'{c+1} - {tudo[c]}')

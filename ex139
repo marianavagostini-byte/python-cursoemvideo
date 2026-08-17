@@ -1,8 +1,0 @@
-tudo={}
-for c in range(1,4):
-    nome =input(f'Nome do {c} vendedor: ')
-    tudo[nome]=float(input(f'Vendas de {nome}: '))
-
-print('\nVendas registradas:')
-for k,v in tudo.items():
-    print(f'-{k} vendeu R$:{v}')

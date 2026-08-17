@@ -1,0 +1,27 @@
+# ex171
+# Fonte: Curso em Vídeo / prática (seu código)
+
+boletim=[]
+def cadastra(boletim):
+    while True:
+        dados={}
+        dados['nome']=input('Nome aluno: ')
+        dados['nota']=float(input('Nota aluno: '))
+        boletim.append(dados)
+        resp=input('deseja continuar [S/N]')
+        if resp.upper()=='N':
+            break
+def mostra(lista):
+    for i,v in enumerate(lista):
+        print(f' - {v["nome"]} - {v["nota"]}')
+
+def recuperacao(lista):
+    nomes=[]
+    for p in lista:
+        if p['nota']<6:
+            nomes.append(p['nome'])
+    return nomes
+
+cadastra(boletim)
+mostra(boletim)
+print(f'Alunos em recuperacao: {recuperacao(boletim)}')

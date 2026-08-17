@@ -1,0 +1,23 @@
+# ex155
+# Fonte: Curso em Vídeo / prática (seu código)
+
+lista=[]
+mulheres=[]
+
+while True:
+    dados={}
+    dados['nome']=str(input('Nome: '))
+    dados['sexo']=(input('Sexo [F/M]: '))
+    dados['idade']=int(input('Idade: '))
+
+    lista.append(dados)
+    resp=input('Deseja continuar [S/N] ? ')
+    if resp.upper()=='N':
+        break
+
+dados['total']=sum(dados)
+dados['media']=(dados['total'])/len(dados['nome'])
+if dados['sexo']=='Ff':
+    mulheres.append(dados['sexo'])
+
+print(f'Todas as mulheres: {mulheres}')

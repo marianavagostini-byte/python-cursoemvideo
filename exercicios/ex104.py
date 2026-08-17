@@ -1,0 +1,10 @@
+# ex104
+# Fonte: Curso em Vídeo / prática (seu código)
+
+numbers=[]
+while True:
+    n=int(input('Type a number [type 0 to end the program]: '))
+    if n == 0:
+        break
+    numbers.append(n)
+print(f'You typed :{numbers}')

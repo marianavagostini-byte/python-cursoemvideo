@@ -1,0 +1,16 @@
+# ex124
+# Fonte: Curso em Vídeo / prática (seu código)
+
+from random import randint
+quant=int(input('Quantas cartelas quer gerar?'))
+sacola=[]
+for c in range(quant):
+    cartela=[]
+    while len(cartela) < 5:
+        num=randint(1,30)
+        if num not in cartela:
+            cartela.append(num)
+    cartela.sort()
+    sacola.append(cartela[:])
+for c in range(len(sacola)):
+    print(f'cartela:{sacola[c]}')
