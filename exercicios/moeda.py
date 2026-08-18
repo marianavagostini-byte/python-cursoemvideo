@@ -25,5 +25,9 @@ def resumo(num=0,taxaA=10,taxaR=5):
     print('-'*30)
     print('RESUMO DO VALOR'.center(30))
     print('-'*30)
-    print(f'preco analisado: {moeda(num)}')
-    return num
+    print(f'preco analisado: \t{moeda(num)}')
+    print(f'Dobro do preco: \t{dobro(num,True)}')
+    print(f'Metade do preco: \t{metade(num,True)}')
+    print(f'Taxa {taxaA}% de aumento: \t{aumentar(num,taxaA,True)}')
+    print(f'Taxa {taxaR}% de reducao: \t{diminuir(num,taxaR,True)}')
+    print('-'*30)
