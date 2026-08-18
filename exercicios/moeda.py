@@ -20,3 +20,10 @@ def diminuir(n,taxa,format=False):
 def moeda(n):
     num=f'R${n:.2f}'.replace('.',',')
     return num
+
+def resumo(num=0,taxaA=10,taxaR=5):
+    print('-'*30)
+    print('RESUMO DO VALOR'.center(30))
+    print('-'*30)
+    print(f'preco analisado: {moeda(num)}')
+    return num
