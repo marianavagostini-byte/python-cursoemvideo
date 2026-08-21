@@ -10,7 +10,7 @@ while True:
 
     if dados['media']>=7:
         dados['situacao']='APROVADO'
-    if dados['media']<5:
+    elif dados['media']<5:
         dados['situacao']='REPROVADO'
     else:
         dados['situacao']='RECUPERACAO'
