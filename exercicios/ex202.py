@@ -23,7 +23,7 @@ while True:
     partidas.append(tentativas)
     while True:
         resp=input('Deseja jogar novamente? [S/N]')
-        if resp.upper()in'S,N':
+        if resp.upper()in['S','N']:
             break
     if resp.upper()=='N':
         break
