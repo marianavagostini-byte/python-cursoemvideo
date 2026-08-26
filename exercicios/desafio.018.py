@@ -29,3 +29,4 @@ class Churras:
         print(painel)
 c1=Churras(titulo='Churras com amigos', qtd_pessoas=10)
 c1.analisar()
+
