@@ -29,12 +29,9 @@ class Churrasco:
             conteudo,
             title=self.titulo,
             box=box.ROUNDED,
-            expand=False  # Faz a moldura abraçar o texto
+            expand=False  
         )
 
         return painel
-
-
-# Teste:
 churras = Churrasco("Churras dos Jv", 15)
-print(churras.__str__())  # ou simplesmente: print(churras)
+print(churras.__str__())  
