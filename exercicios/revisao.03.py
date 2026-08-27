@@ -20,4 +20,3 @@ c1.somar()
 
 c1.mostrar() 
 
-c1.mostrar()  
