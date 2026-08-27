@@ -4,11 +4,9 @@ class Cofre:
     def depositar(self,valor):
         self.saldo+=valor
     def mostrar(self):
-        texto=f"Saldo: {self.saldo}"
-        print(texto)
-        
+        text=f"Saldo: {self.saldo}"
+        print(text)
+    
 c1=Cofre()
-c1.mostrar()
 c1.depositar(500)
 c1.mostrar()
-c1.depositar(500)
