@@ -4,14 +4,14 @@ class ContaBancaria:
         self.saldo=0
         self.extrato=[]
         
-    def depositar(self,deposito=0):
+    def depositar(self,deposito):
         if deposito > 0:
             self.saldo += deposito
             self.extrato.append(f'Deposito de: R$ {deposito} realizado.')
         else:
             print('Deposito negado !! Digite um valor acima de " 0 ".')
     
-    def sacar(self, saque=0):
+    def sacar(self, saque):
         if saque > 0 and saque <= self.saldo:
             self.saldo -= saque
             self.extrato.append(f'Saque de: R$ {saque} realizado. ')
@@ -30,7 +30,7 @@ class ContaBancaria:
         else:
             for item in self.extrato:
                 print(item)
-            print(f'Saldo atual: R$ {self.saldo:.2f}')
+        print(f'Saldo atual: R$ {self.saldo:.2f}')
 nome_cliente=input('Nome do titular: ')
 conta=ContaBancaria(nome_cliente)
 while True:
