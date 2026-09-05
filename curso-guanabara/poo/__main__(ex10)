@@ -1,0 +1,13 @@
+from exPOO10 import Credencial , console
+
+def main():
+    c = Credencial()
+    
+    c.senha = "MVA157"
+
+    tentativa = console.input("[black on white]Digite a sua senha:[/] ")
+
+    c.validar(tentativa)
+
+if __name__ == "__main__":
+    main()
