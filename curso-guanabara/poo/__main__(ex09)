@@ -1,0 +1,12 @@
+from exPOO09 import *
+
+def main():
+    diary=Diario()
+    diary.escrever('Fuck Donald Trump')
+    diary.escrever('Billie eilish Bitches')
+    try:
+        diary.ler(123)
+    except Exception as e:
+        print(f'[red]ERRO: {e}[/]')
+if __name__ == "__main__":
+    main()
