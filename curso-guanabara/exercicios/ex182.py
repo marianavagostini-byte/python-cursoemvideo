@@ -1,0 +1,12 @@
+# ex182
+# Fonte: Curso em Vídeo / prática (seu código)
+
+def leiaint(msg):
+    while True:
+        n=input(msg)
+        if n.isnumeric():
+            return int(n)
+        print('ERRO ! Digite um numero valido.')
+
+n=leiaint('Digite um numero: ')
+print(f'Voce acabou de digitar o numero {n}.')

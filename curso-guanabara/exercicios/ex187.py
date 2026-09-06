@@ -1,0 +1,22 @@
+# ex187
+# Fonte: Curso em Vídeo / prática (seu código)
+
+def notas(*n,sit=False):
+    dic={}
+    dic['qtd']=len(n)
+    dic['maior']=max(n)
+    dic['menor']=min(n)
+    dic['media']=sum(n)/len(n)
+
+    if sit:
+        if dic['media']>=7:
+            dic['situacao']='Media alta, parabens!'
+        elif dic['media']<=5:
+            dic['situacao']='Media pessima, REPROVOU!!!'
+        else:
+            dic['situacao']='Media ruim, RECUPERACAO!!'
+
+    return dic
+
+resp=notas(1,2,3,2,sit=True)
+print(resp)

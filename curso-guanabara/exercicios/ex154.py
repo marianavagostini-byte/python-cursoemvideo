@@ -1,0 +1,15 @@
+# ex154
+# Fonte: Curso em Vídeo / prática (seu código)
+
+dados={}
+lista=[]
+dados['nome']=str(input('Nome do jogador: '))
+qtd=int(input(f'Quantas partidas {dados["nome"]} jogou? '))
+for c in range(0,qtd):
+    lista.append(int(input(f'Quantidade de gols do {dados["nome"]} na partida {c+1} : ')))
+dados['gols']=lista[:]
+dados['total']=sum(dados['gols'])
+print(f'O {dados["nome"]} jogou {qtd} partidas')
+for i,v in enumerate(dados['gols']):
+    print(f' => Na partida {i+1} - {v} gols.')
+print(f'Total de {dados["total"]} gols.')

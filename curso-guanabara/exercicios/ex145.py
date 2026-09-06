@@ -1,0 +1,19 @@
+# ex145
+# Fonte: Curso em Vídeo / prática (seu código)
+
+from datetime import datetime
+dados={}
+dados['nome']=input('Nome do pet: ')
+nasc=int(input('Ano de nascimento: '))
+dados['idade']=datetime.now().year-nasc
+dados['especie']=input('Especie: ')
+dados['vacinado']=int(input(' Vacinado? [1 Sim / 0 Nao ]: '))
+if dados['vacinado']==1:
+    dados['ultima vacina']=int(input('Ano da ultima vacina: '))
+    dados['vet']=input('Nome do veterinario: ')
+    dados['vencimento']=(dados['ultima vacina']+3)-datetime.now().year
+
+for k,v in dados.items():
+    print(f' - {k} - {v}')
+
+    

@@ -1,0 +1,48 @@
+# ex116
+# Fonte: Curso em Vídeo / prática (seu código)
+
+temp=[]
+principal=[]
+maior=menor=0
+while True:
+    temp.append(str(input('Nome: ')))
+
+    while True:
+        try:
+            nota=float(input('Nota de 0 a 10: '))
+        except ValueError:
+            print('Erro!')
+            continue
+        if nota <0 or nota > 10:
+            print('Erro, digite entre 0 e 10 !')
+            continue
+        break
+
+    temp.append(nota)
+
+    if len(principal)==0:
+        maior=menor=temp[1]
+    else:
+        if temp[1] > maior:
+            maior=temp[1]
+        if temp[1] < menor:
+            menor=temp[1]
+    
+    principal.append(temp[:])
+    temp.clear()
+
+    resp=str(input('Deseja continuar? [S/N]'))
+    if resp.upper()=='N':
+        break
+
+if len(principal)==0:
+    print('Ninguem foi cadastrado !')
+else:
+    print(f'Foram cadastrados: {len(principal)} alunos.')
+    for p in principal:
+        print(f'Alunos: {p[0]} - notas {p[1]}')
+    for p in principal:
+        if p[1] == maior:
+                print(f'A maior nota foi: {maior} - de: {p[0]}')
+        if p[1] == menor:
+                print(f'A menor nota foi {menor} - de {p[0]}')
