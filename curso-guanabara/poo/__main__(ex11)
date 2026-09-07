@@ -1,0 +1,13 @@
+from exPOO11 import ContaBancaria
+
+
+def main():
+    cc = ContaBancaria(157, "Mariana", 1500)
+    cc.depositar(300)
+    cc.sacar(200)
+    print(f"Total movimentado: R$ {cc.total_movimentado():,.2f}")
+    cc.mostrar_extrato()
+
+
+if __name__ == "__main__":
+    main()
