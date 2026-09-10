@@ -1,0 +1,22 @@
+class Solution:
+    def removeElement(self, nums: list[int], val: int) -> int:
+        # SEU CÓDIGO AQUI
+        # Dica: use uma variável para controlar o índice onde colocar os valores válidos
+        write_index = 0
+
+        for num in nums:
+            if num != val:
+                nums[write_index] = num
+                write_index += 1
+
+        return write_index
+
+
+# --- ÁREA DE TESTE LOCAL ---
+if __name__ == "__main__":
+    sol = Solution()
+    
+    teste_nums = [3, 2, 2, 3]
+    k = sol.removeElement(teste_nums, 3)
+    print("Array resultante:", teste_nums[:k])
+    print("Esperado: [2, 2] | Quantidade:", k)
