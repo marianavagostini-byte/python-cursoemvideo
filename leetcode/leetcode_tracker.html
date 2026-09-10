@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Estudos - DSA & LeetCode</title>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #cbd5e1;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            padding: 24px;
+            margin: 0;
+        }
+        h1 {
+            color: #f8fafc;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #1e293b;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #334155;
+            font-size: 14px;
+        }
+        th {
+            background-color: #1e293b;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+        .badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .kyu-6 { background-color: #0284c7; color: #ffffff; }
+        .kyu-4 { background-color: #eab308; color: #000000; }
+        .frente {
+            background-color: #d97706;
+            color: #ffffff;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        select, input[type="text"] {
+            background-color: #0f172a;
+            border: 1px solid #475569;
+            color: #e2e8f0;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        select:focus, input[type="text"]:focus {
+            outline: 1px solid #38bdf8;
+        }
+        .status-concluido { color: #4ade80; }
+        .status-treinando { color: #facc15; }
+        .status-travei { color: #f87171; }
+        .status-naoiniciado { color: #94a3b8; }
+        .links a {
+            color: #38bdf8;
+            text-decoration: none;
+            margin-right: 8px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>DSA + LeetCode — Plano de Execução Semanal</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Semana</th>
+                <th>Kyu</th>
+                <th>Frente</th>
+                <th>Tópico / Padrão</th>
+                <th>Exercícios Recomendados</th>
+                <th>Status</th>
+                <th>Anotações / Arquivo</th>
+            </tr>
+        </thead>
+        <tbody id="tracker-body">
+            <!-- As linhas são geradas dinamicamente para facilitar a gravação -->
+        </tbody>
+    </table>
+
+    <script>
+        const dados = [
+            {
+                id: "s1", sem: "S1", kyu: "4 kyu", kyuClass: "kyu-4",
+                topico: "Big O: como medir custo",
+                exercicios: "Teoria de complexidade de tempo e espaço",
+                padraoStatus: "Concluído", link: ""
+            },
+            {
+                id: "s2", sem: "S2", kyu: "6 kyu", kyuClass: "kyu-6",
+                topico: "Array: operações e custo",
+                exercicios: "<a href='https://leetcode.com/problems/remove-element/' target='_blank'>LC 27 (Remove Element)</a>",
+                padraoStatus: "Concluído", link: ""
+            },
+            {
+                id: "s3", sem: "S3", kyu: "6 kyu", kyuClass: "kyu-6",
+                topico: "String: operações e custo",
+                exercicios: "<a href='https://leetcode.com/problems/valid-palindrome/' target='_blank'>LC 125 (Valid Palindrome)</a>",
+                padraoStatus: "Concluído", link: ""
+            },
+            {
+                id: "s4", sem: "S4", kyu: "4 kyu", kyuClass: "kyu-4",
+                topico: "Hashmap / Dicionário",
+                exercicios: "<a href='https://leetcode.com/problems/two-sum/' target='_blank'>LC 1 (Two Sum)</a>",
+                padraoStatus: "Concluído", link: ""
+            },
+            {
+                id: "s5", sem: "S5", kyu: "4 kyu", kyuClass: "kyu-4",
+                topico: "Two Pointers",
+                exercicios: "<a href='https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/' target='_blank'>LC 167 (Two Sum II)</a>, <a href='https://leetcode.com/problems/valid-palindrome/' target='_blank'>LC 125</a>",
+                padraoStatus: "Não iniciado", link: ""
+            },
+            {
+                id: "s6", sem: "S6", kyu: "4 kyu", kyuClass: "kyu-4",
+                topico: "Sliding Window",
+                exercicios: "<a href='https://leetcode.com/problems/maximum-average-subarray-i/' target='_blank'>LC 643</a>, <a href='https://leetcode.com/problems/longest-substring-without-repeating-characters/' target='_blank'>LC 3</a>",
+                padraoStatus: "Não iniciado", link: ""
+            },
+            {
+                id: "s7", sem: "S7", kyu: "4 kyu", kyuClass: "kyu-4",
+                topico: "Stack & Queue",
+                exercicios: "<a href='https://leetcode.com/problems/valid-parentheses/' target='_blank'>LC 20 (Valid Parentheses)</a>, <a href='https://leetcode.com/problems/implement-queue-using-stacks/' target='_blank'>LC 232</a>",
+                padraoStatus: "Não iniciado", link: ""
+            },
+            {
+                id: "s8", sem: "S8", kyu: "4 kyu", kyuClass: "kyu-4",
+                topico: "Linked List",
+                exercicios: "<a href='https://leetcode.com/problems/reverse-linked-list/' target='_blank'>LC 206</a>, <a href='https://leetcode.com/problems/merge-two-sorted-lists/' target='_blank'>LC 21</a>",
+                padraoStatus: "Não iniciado", link: ""
+            },
+            {
+                id: "s9", sem: "S9", kyu: "4 kyu", kyuClass: "kyu-4",
+                topico: "Binary Search",
+                exercicios: "<a href='https://leetcode.com/problems/binary-search/' target='_blank'>LC 704</a>, <a href='https://leetcode.com/problems/search-insert-position/' target='_blank'>LC 35</a>",
+                padraoStatus: "Não iniciado", link: ""
+            },
+            {
+                id: "s10", sem: "S10", kyu: "4 kyu", kyuClass: "kyu-4",
+                topico: "Sorting & Matrix",
+                exercicios: "<a href='https://leetcode.com/problems/merge-sorted-array/' target='_blank'>LC 88</a>, <a href='https://leetcode.com/problems/set-matrix-zeroes/' target='_blank'>LC 73</a>",
+                padraoStatus: "Não iniciado", link: ""
+            },
+            {
+                id: "s11", sem: "S11", kyu: "4 kyu", kyuClass: "kyu-4",
+                topico: "Binary Tree (DFS / BFS)",
+                exercicios: "<a href='https://leetcode.com/problems/maximum-depth-of-binary-tree/' target='_blank'>LC 104</a>, <a href='https://leetcode.com/problems/binary-tree-level-order-traversal/' target='_blank'>LC 102</a>",
+                padraoStatus: "Não iniciado", link: ""
+            },
+            {
+                id: "s12", sem: "S12", kyu: "4 kyu", kyuClass: "kyu-4",
+                topico: "Backtracking",
+                exercicios: "<a href='https://leetcode.com/problems/subsets/' target='_blank'>LC 78</a>, <a href='https://leetcode.com/problems/permutations/' target='_blank'>LC 46</a>",
+                padraoStatus: "Não iniciado", link: ""
+            }
+        ];
+
+        const tbody = document.getElementById("tracker-body");
+
+        function renderRows() {
+            tbody.innerHTML = "";
+            dados.forEach(item => {
+                const salvoStatus = localStorage.getItem(`status_${item.id}`) || item.padraoStatus;
+                const salvoNota = localStorage.getItem(`nota_${item.id}`) || "";
+
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${item.sem}</td>
+                    <td><span class="badge ${item.kyuClass}">${item.kyu}</span></td>
+                    <td><span class="frente">DSA + LeetCode</span></td>
+                    <td><strong>${item.topico}</strong></td>
+                    <td class="links">${item.exercicios}</td>
+                    <td>
+                        <select onchange="salvarStatus('${item.id}', this.value)">
+                            <option value="Não iniciado" ${salvoStatus === 'Não iniciado' ? 'selected' : ''}>Não iniciado</option>
+                            <option value="Treinando" ${salvoStatus === 'Treinando' ? 'selected' : ''}>Treinando</option>
+                            <option value="Travei" ${salvoStatus === 'Travei' ? 'selected' : ''}>Travei</option>
+                            <option value="Concluído" ${salvoStatus === 'Concluído' ? 'selected' : ''}>Concluído</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" placeholder="ex: padroes.md ou caminho" value="${salvoNota}" 
+                               oninput="salvarNota('${item.id}', this.value)" />
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function salvarStatus(id, valor) {
+            localStorage.setItem(`status_${id}`, valor);
+        }
+
+        function salvarNota(id, valor) {
+            localStorage.setItem(`nota_${id}`, valor);
+        }
+
+        renderRows();
+    </script>
+</body>
+</html>

@@ -2,14 +2,14 @@ class Solution:
     def removeElement(self, nums: list[int], val: int) -> int:
         # SEU CÓDIGO AQUI
         # Dica: use uma variável para controlar o índice onde colocar os valores válidos
-        write_index = 0
+        contador = 0
 
-        for num in nums:
-            if num != val:
-                nums[write_index] = num
-                write_index += 1
+        for numero in nums:
+            if numero != val:
+                nums[contador] = numero
+                contador+= 1
 
-        return write_index
+        return contador
 
 
 # --- ÁREA DE TESTE LOCAL ---
