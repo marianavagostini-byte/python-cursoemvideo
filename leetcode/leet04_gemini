@@ -1,0 +1,12 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        # 1. Filtra mantendo apenas letras e números em minúsculo
+        limpo = "".join(char.lower() for char in s if char.isalnum())
+        # 2. Compara com a versão invertida
+        return limpo == limpo[::-1]
+
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.isPalindrome("A man, a plan, a canal: Panama"))  # Esperado: True
+    print(sol.isPalindrome("race a car"))                      # Esperado: False
