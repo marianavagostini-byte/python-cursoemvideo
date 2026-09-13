@@ -1,0 +1,25 @@
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        palavras = s.split(" ")
+        palavras_invertidas = []
+
+        for palavra in palavras:
+            invertida = palavra[::-1]
+            palavras_invertidas.append(invertida)
+
+        resultado = " ".join(palavras_invertidas)
+        return resultado
+
+
+# --- Área de Teste ---
+sol = Solution()
+
+# Exemplo 1
+frase1 = "Let's take LeetCode contest"
+resposta1 = sol.reverseWords(frase1)
+print(resposta1)
+
+# Exemplo 2
+frase2 = "Mr Ding"
+resposta2 = sol.reverseWords(frase2)
+print(resposta2)
