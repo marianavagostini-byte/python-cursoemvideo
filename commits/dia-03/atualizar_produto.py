@@ -1,4 +1,4 @@
-import sqlite3
+﻿import sqlite3
 
 connector = sqlite3.connect("estoque.db")
 cursor = connector.cursor()
