@@ -1,4 +1,4 @@
-import sqlite3
+﻿import sqlite3
 
 connector = sqlite3.connect("estoque.db")
 cursor = connector.cursor()
@@ -11,6 +11,6 @@ cursor.execute(
 produtos = cursor.fetchall()
 
 for produto in produtos:
-    print(f"ID: {produto[0]} | Produto: {produto[1]} | Pre�o: R")
+    print(f"ID: {produto[0]} | Produto: {produto[1]} | Preço: R\")
 
 connector.close()
