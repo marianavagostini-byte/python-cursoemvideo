@@ -1,4 +1,4 @@
-import sqlite3
+﻿import sqlite3
 
 connector = sqlite3.connect("vendas.db")
 cursor = connector.cursor()
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS pedidos (
 
 cursor.execute(
     "INSERT INTO clientes (nome) VALUES (?)",
-    ("Jo�o",)
+    ("João",)
 )
 
 cliente_id = cursor.lastrowid
@@ -46,7 +46,7 @@ for pedido in pedidos:
     print(
         f"Cliente: {pedido[0]} | "
         f"Produto: {pedido[1]} | "
-        f"Valor: R"
+        f"Valor: R\"
     )
 
 connector.close()
